@@ -30,7 +30,7 @@
       display:none; flex-direction:column; cursor:pointer; gap:5px;
     }
     .burger span {
-      width:25px; height:3px; background:white; border-radius:2px;
+      width:25px; height:3px; background:var(--main); border-radius:2px;
     }
     .mobile-nav {
       display:none; flex-direction:column; background:rgba(34,34,34,0.95);
@@ -95,6 +95,7 @@
     <a href="#calc">Калькулятор</a>
     <a href="#reviews">Отзывы</a>
     <a href="#contact">Контакты</a>
+    <a href="https://t.me/casabella_odessa_bot" target="_blank">Telegram</a>
   </nav>
   <div class="burger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -105,6 +106,7 @@
     <a href="#calc" onclick="toggleMenu()">Калькулятор</a>
     <a href="#reviews" onclick="toggleMenu()">Отзывы</a>
     <a href="#contact" onclick="toggleMenu()">Контакты</a>
+    <a href="https://t.me/casabella_odessa_bot" target="_blank" onclick="toggleMenu()">Telegram</a>
   </div>
 </header>
 
@@ -133,7 +135,7 @@
     <div class="price-card"><h3>Мойка окон</h3><p>от 170 грн/кв.м.</p></div>
     <div class="price-card"><h3>Химчистка мебели</h3><p>от 700 грн</p></div>
     <div class="price-card"><h3>Генеральная уборка</h3><p>от 3500 грн</p></div>
-  </div>
+    <div class="price-card"><h3>Поддержывающая уборка</h3><p>от 1500 грн</p></div>
 </section>
 
 <section id="calc" class="section">
@@ -141,11 +143,12 @@
   <form id="calc-form">
     <label>Выберите тип уборки:</label>
     <select id="service">
-      <option value="2500">Квартира (от 3500 грн)</option>
-      <option value="3500">Офис (от 2500 грн)</option>
+      <option value="3500">Квартира (от 3500 грн)</option>
+      <option value="2500">Офис (от 2500 грн)</option>
       <option value="1500">Мытьё окон (от 1500 грн)</option>
       <option value="2000">Химчистка мебели (от 2000 грн)</option>
-    <option value="2000">Генеральная уборка (от 3500 грн)</option>
+      <option value="3500">Генеральная уборка (от 3500 грн)</option>
+      <option value="3500">Поддержывающая уборка (от 1500 грн)</option>
     </select>
     <label>Метраж помещения (м²):</label>
     <input type="number" id="area" placeholder="Например: 50" min="10" value="50">
@@ -172,10 +175,15 @@
     </select>
     <button class="btn" type="submit">Отправить</button>
   </form>
+  <p style="margin-top:20px;">
+    Или напишите нам прямо в Telegram 👉 
+    <a href="https://t.me/casabella_odessa_bot" class="btn" target="_blank">Наш бот</a>
+  </p>
 </section>
 
 <footer>
-  <p>© 2025 CasaBella  | Тел: <a href="tel:+79991234567" style="color:teal;">+38 (068) 106-11-67</a></p>
+  <p>© 2025 CasaBella  | Тел: <a href="tel:+380681061167" style="color:teal;">+38 (068) 106-11-67</a> | 
+  <a href="https://t.me/casabella_odessa_bot" style="color:teal;" target="_blank">Telegram бот</a></p>
 </footer>
 
 <script>
@@ -195,3 +203,4 @@ function toggleMenu(){
 
 </body>
 </html>
+
