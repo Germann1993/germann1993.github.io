@@ -214,7 +214,37 @@ function toggleMenu(){
   menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
 }
 </script>
+<script>
+const BOT_TOKEN = "8222626015:AAGSIzeZ0sgP7ro4VVytHlX4818762s8O60";
+const CHAT_ID = "7238176518";
 
+document.getElementById("reviewForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let message = document.getElementById("message").value;
+
+  // формируем текст для Telegram
+  let text = `📢 Новый отзыв:\n👤 ${name}\n💬 ${message}`;
+
+  // отправляем в Telegram
+  fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({chat_id: CHAT_ID, text: text})
+  });
+
+  // добавляем отзыв на сайт
+  let container = document.getElementById("reviewsContainer");
+  let reviewEl = document.createElement("div");
+  reviewEl.className = "review";
+  reviewEl.innerHTML = `⭐ <b>${name}</b>: "${message}"`;
+  container.prepend(reviewEl);
+
+  // очищаем форму
+  document.getElementById("reviewForm").reset();
+});
+</script>
 </body>
 </html>
 
