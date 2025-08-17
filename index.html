@@ -11,7 +11,14 @@
       --light:#f9f9f9;
     }
     * {box-sizing:border-box; scroll-behavior:smooth;}
-    body {margin:0; font-family:"Segoe UI",sans-serif; color:#333; line-height:1.6;}
+    body {
+      margin:0;
+      font-family:"Segoe UI",sans-serif;
+      color:#333;
+      line-height:1.6;
+      background: url("https://i.ibb.co/kKCMH5M/blue-bg.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
     
     /* HEADER */
     header {
@@ -72,7 +79,12 @@
     .price-card h3 {margin:0 0 10px;}
     .review {max-width:600px; margin:0 auto; font-style:italic;}
     form {max-width:400px; margin:0 auto; display:flex; flex-direction:column; gap:15px;}
-    input, select {padding:12px; border:1px solid #ccc; border-radius:6px;}
+    input, select, textarea {
+      padding:12px;
+      border:1px solid #ccc;
+      border-radius:6px;
+      resize: none;
+    }
     footer {background:var(--dark); color:teal; text-align:center; padding:20px;}
     
     /* CALCULATOR */
